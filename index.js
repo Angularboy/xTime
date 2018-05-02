@@ -1,5 +1,5 @@
-const xTime = {
-    name: 'xTime'
+const xxtime = {
+    name: 'xxtime'
 };
 
-module.exports = xTime;
+module.exports = xxtime;

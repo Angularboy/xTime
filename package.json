@@ -1,7 +1,7 @@
 {
-  "name": "xtime",
+  "name": "xxtime",
   "version": "1.0.0",
-  "description": "xTime",
+  "description": "xxtime",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
