@@ -3,7 +3,7 @@
 }(this, function () {
     "use strict";
 
-    var API = function (n) {
+    var API = function () {
 
         this.add = function (a, b) {
             var c, d, e;
@@ -65,7 +65,7 @@
     };
 
 
-    return function (n) {
-        return new API(n)
+    return function () {
+        return new API()
     }
 });
