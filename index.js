@@ -3,41 +3,69 @@
 }(this, function () {
     "use strict";
 
-    /////////////////////////////////
-    var add = function (x, y) {
-        return x + y
+    var API = function (n) {
+
+        this.add = function (a, b) {
+            var c, d, e;
+            try {
+                c = a.toString().split(".")[1].length;
+            } catch (f) {
+                c = 0;
+            }
+            try {
+                d = b.toString().split(".")[1].length;
+            } catch (f) {
+                d = 0;
+            }
+            return e = Math.pow(10, Math.max(c, d)), (this.mul(a, e) + this.mul(b, e)) / e;
+        };
+        this.sub = function (a, b) {
+            var c, d, e;
+            try {
+                c = a.toString().split(".")[1].length;
+            } catch (f) {
+                c = 0;
+            }
+            try {
+                d = b.toString().split(".")[1].length;
+            } catch (f) {
+                d = 0;
+            }
+            return e = Math.pow(10, Math.max(c, d)), (this.mul(a, e) - this.mul(b, e)) / e;
+        };
+        this.mul = function (a, b) {
+            if (a === undefined || b === undefined) return false;
+            var c = 0,
+                d = a.toString(),
+                e = b.toString();
+            try {
+                c += d.split(".")[1].length;
+            } catch (f) {
+            }
+            try {
+                c += e.split(".")[1].length;
+            } catch (f) {
+            }
+            return Number(d.replace(".", "")) * Number(e.replace(".", "")) / Math.pow(10, c);
+        };
+        this.div = function (a, b) {
+            var c, d, e = 0,
+                f = 0;
+            try {
+                e = a.toString().split(".")[1].length;
+            } catch (g) {
+            }
+            try {
+                f = b.toString().split(".")[1].length;
+            } catch (g) {
+            }
+            return c = Number(a.toString().replace(".", "")), d = Number(b.toString().replace(".", "")), this.mul(c / d, Math.pow(10, f - e));
+        }
+
     };
-    var multiply = function (x, y) {
-        return x * y
-    };
 
-    var flock_a = 4;
-    var flock_b = 2;
-    var flock_c = 0;
-
-    console.log(multiply(flock_b, add(flock_a, flock_a)));
-    //////////////////////////////////
-
-
-    function init(n) {
-        return n
-    }
-
-    var Time = function (n) {
-
-        return Time.prototype.init(n)
-    };
-
-    Time.prototype.init = function (n) {
-
-        // console.log(n);
-
-        return function (n) {
-            return init(n)
-        }()
-    };
 
     return function (n) {
-        return new Time(n)
-    };
+        return new API(n)
+    }
 });
